@@ -18,20 +18,31 @@ public class GeneratorControler {
         return "test";
     }
 
-    /* @GetMapping("/main")
-    public String generatorLorem(ModelMap modelMap) {
-        modelMap.put("paragraph", lorem.getParagraphs(1,5));
-        return lorem.getParagraphs(1,5);
-         } */
 
     @GetMapping("/main")
     public String generatorLorem(
-            @RequestParam(required = false) Integer quantity, ModelMap map) {
+            @RequestParam(required = false) String type, Integer quantity, ModelMap map) {
         if (quantity != null) {
-            map.put("paragraph", lorem.getParagraphs(quantity, quantity));
+            switch (type) {
+                case "paragraphs":
+                    map.put("paragraph", lorem.getParagraphs(quantity, quantity));
+                    break;
+                case "sentence":
+                    StringBuilder bolek = new StringBuilder();
+                    for (int i = 0; i <= quantity; i++) {
+                        String words = lorem.getWords(5, 15);
+                        bolek.append(words);
+                        bolek.append(". ");
+                    }
+                    String result = bolek.toString().trim();
+                    map.put("paragraph", result);
+                    break;
+                case "words":
+                    map.put("paragraph", lorem.getWords(quantity, quantity));
+                    break;
+            }
         }
         return "main";
-
     }
 
 }
