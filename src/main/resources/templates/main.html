@@ -10,17 +10,17 @@
 
     <form>
         <label>Liczba paragrafów:</label>
-        <input type="number" value="1" min="1" max="10" name="parNumber">
-        <input type="submit" value="Generuj">
+        <input type="number" value="1" min="1" max="50" name="quantity">
+        <button name="submit">Generuj</button>
+        <!-- <input type="button" value="Generuj"> -->
     </form>
+
 
 <h3>Paragrafy</h3>
 
 <ul> <!-- foreach dla thymeleaf -->
-    <li th:each="lorem: ${lorem}" th:text="${lorem}"/>
+    <li th:text="${paragraph}"/>
 </ul>
-
-<h1 th:text="${lorem}"/>
 
 </body>
 </html>

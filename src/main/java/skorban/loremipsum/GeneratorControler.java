@@ -5,6 +5,7 @@ import com.thedeanda.lorem.LoremIpsum;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GeneratorControler {
@@ -17,9 +18,20 @@ public class GeneratorControler {
         return "test";
     }
 
+    /* @GetMapping("/main")
+    public String generatorLorem(ModelMap modelMap) {
+        modelMap.put("paragraph", lorem.getParagraphs(1,5));
+        return lorem.getParagraphs(1,5);
+         } */
+
     @GetMapping("/main")
-    public String generatorLorem() {
-        return lorem.getHtmlParagraphs(1, 10);
+    public String generatorLorem(
+            @RequestParam(required = false) Integer quantity, ModelMap map) {
+        if (quantity != null) {
+            map.put("paragraph", lorem.getParagraphs(quantity, quantity));
+        }
+        return "main";
+
     }
 
 }
