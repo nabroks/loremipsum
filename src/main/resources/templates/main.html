@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Generator</title>
+    <title>Generator "Lorem Ipsum"</title>
+    <link href="master.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -23,9 +25,8 @@
 
 <h3>Paragrafy</h3>
 
-<ul> <!-- foreach dla thymeleaf -->
-    <li th:text="${paragraph}"/>
-</ul>
+
+<p th:utext="${paragraph}"/>
 
 </body>
 </html>
