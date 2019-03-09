@@ -9,5 +9,4 @@ public class LoremipsumApplication {
     public static void main(String[] args) {
         SpringApplication.run(LoremipsumApplication.class, args);
     }
-
 }
