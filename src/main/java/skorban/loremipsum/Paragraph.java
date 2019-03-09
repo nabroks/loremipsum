@@ -1,4 +1,4 @@
 package skorban.loremipsum;
 
-public class Paragraph extends GeneratorControler {
+public class Paragraph extends Generator {
 }

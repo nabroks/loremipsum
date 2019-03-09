@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class GeneratorControler {
+public class Generator {
 
     private Lorem lorem = new LoremIpsum();
 
@@ -28,13 +28,13 @@ public class GeneratorControler {
                     map.put("paragraph", lorem.getParagraphs(quantity, quantity));
                     break;
                 case "sentence":
-                    StringBuilder bolek = new StringBuilder();
+                    StringBuilder sb = new StringBuilder();
                     for (int i = 0; i <= quantity; i++) {
                         String words = lorem.getWords(5, 15);
-                        bolek.append(words);
-                        bolek.append(". ");
+                        sb.append(words);
+                        sb.append(". ");
                     }
-                    String result = bolek.toString().trim();
+                    String result = sb.toString().trim();
                     map.put("paragraph", result);
                     break;
                 case "words":
