@@ -1,4 +1,9 @@
 body {
-  background: #eee;
+  background: #eeeeee;
+  font-family: 'Lato', sans-serif;
+}
+
+form {
+  background: #eeeeee;
   font-family: 'Lato', sans-serif;
 }
