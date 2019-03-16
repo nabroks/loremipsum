@@ -2,38 +2,43 @@
 <html lang=pl xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Generator Lorem Ipsum" />
+    <meta name="keywords" content="generator, lorem, impsum, java, html, dummy, content" />
+
     <title>Generator "Lorem Ipsum"</title>
     <link rel="stylesheet" href="../static/master.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Lato');
-    </style>
 </head>
 
 <body>
-
-<header>
-    <h1 style="padding: 10px;" > Generator Lorem Ipsum </h1>
-</header>
-<p style="padding: 10px; color: darkgrey">Niniejszy generator służy do generowanie teksu "Lorem Ipsum", czyli
-    wypełniacze dla pustych stron i artykułów.</p>
-
-<form>
-    <h3>Co potrzebujesz wygenerować:</h3>
-    <input max="50" min="1" name="quantity" type="number" value="1">
-    <select name="type">
-        <option value="paragraphs">paragraphs</option>
-        <option value="sentence">sentence</option>
-        <option value="words">words</option>
-    </select>
-    <button name="submit">Generuj</button>
-</form>
-
-
-<h3>Produkt końcowy:</h3>
-
-
-<p th:utext="${paragraph}"/>
-
+    <div id="container">
+        <header>
+            <div id="logo">
+                <h1 style="padding: 10px;"> <span>G</span>enerator <span>L</span>orem <span>I</span>psum </h1>
+            </div>
+            <p id="description">
+                Niniejszy generator służy do generowanie teksu "Lorem Ipsum", czyli
+                wypełniacze dla pustych stron i artykułów.
+            </p>
+        </header>
+        <section id="parameters">
+            <form>
+                <h3>Co potrzebujesz wygenerować:</h3>
+                <input max="50" min="1" name="quantity" type="number" value="1">
+                <select name="type">
+                    <option value="paragraphs">paragraphs</option>
+                    <option value="sentence">sentence</option>
+                    <option value="words">words</option>
+                </select>
+                <br />
+                <button name="submit">Stwórz Lorem Ipsum</button>
+            </form>
+        </section>
+        <section id="loremIpsumResult">
+            <h3>Twoje Lorem Ipsum</h3>
+            <p th:utext="${paragraph}">
+            </p>
+        </section>
+    </div>
 </body>
 </html>
